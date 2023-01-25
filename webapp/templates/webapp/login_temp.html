@@ -1,0 +1,10 @@
+
+<div>
+  <div class="login_temp">
+      <form action="{% url 'webapp:login' %}" method="post" class="login_form">{% csrf_token %}
+          <input type="input" name="username" placeholder="UserName">
+          <input type="password" name="password" placeholder="PassWord">
+          <input type="submit" value="Login">
+      </form>
+  </div>
+</div>
