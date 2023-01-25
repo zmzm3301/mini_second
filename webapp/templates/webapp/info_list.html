@@ -54,7 +54,6 @@
     {% include 'webapp/about.html' %}
     {% include 'webapp/services.html' %}
     {% include 'webapp/features.html' %}
-
     {% include 'webapp/cta.html' %}
     {% include 'webapp/portfolio.html' %}
     {% include 'webapp/pricing.html' %}
@@ -69,95 +68,12 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">정보 입력</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="{% url 'webapp:createform' %}" class="robot_input">
-                    <div class="modalForm">
-                        <div>
-                            <div>
-                                배터리<input type="text" name="battery" id="batteryInput">
-                            </div>
-                            <br>
-                            <div>
-                                경과 시간<input type="text" name="runtime" id="runtimeInput">
-                            </div>
-                            <br>
-                            <div>
-                                색상<input type="color" name="color" id="colorInput">
-                            </div>
-                        </div>
+{% include 'webapp/omo_modal.html' %}
 
-                        <div class="buttonArea">
-                            <div>
-                                <button type="submit" class="btn btn-primary">입력</button>
-                            </div>
-                            <div class="inputButton">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
 
-            </div>
+{% include 'webapp/login_modal.html' %}
+{% include 'webapp/logout_modal.html' %}
 
-        </div>
-    </div>
-</div>
-
-<!-- Login modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Log In</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body logmodalbody">
-                <div>
-                    {% include 'webapp/login_temp.html' %}
-
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Logout modal -->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="logoutModalLabel">Log Out</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" id="logoutmodalbody">
-                <div class="logout_temp"></div>
-                <div id="logout_tdiv"><h3 id="logout_text">로그아웃 되었습니다.</h3></div>
-            </div>
-            <div class="modal-footer">
-                <form action="{% url 'webapp:logout' %}" method="post" class="col-md-4 logout_button">
-                    {% csrf_token %}
-                    <input type="submit" value="확인">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Vendor JS Files -->
 <script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
