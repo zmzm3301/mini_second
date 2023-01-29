@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load recent_post %}
 <html lang="ko">
 
 <head>
@@ -37,42 +38,41 @@
     ======================================================== -->
 
     <link rel="stylesheet" href="{% static 'webapp/bootstrap/bootstrap.min.css' %}" media="screen">
+
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
-
 </head>
+
 
 <body>
 
-{% include 'webapp/header.html' %}
-{% include 'webapp/hero.html' %}
+{% include 'webapp/html/header.html' %}
+{% include 'webapp/html/hero.html' %}
 
 
 <main id="main">
 
-    {% include 'webapp/about.html' %}
-    {% include 'webapp/services.html' %}
-    {% include 'webapp/features.html' %}
-    {% include 'webapp/accordion_test.html' %}
-    {% include 'webapp/cta.html' %}
-    {% include 'webapp/portfolio.html' %}
-    {% include 'webapp/pricing.html' %}
-    {% include 'webapp/faq.html' %}
-    {% include 'webapp/team.html' %}
-    {% include 'webapp/contact.html' %}
+    {% include 'webapp/html/accordion.html' %}
+    {% include 'webapp/html/cta.html' %}
+    {% include 'webapp/html/faq.html' %}
+    {% include 'webapp/html/faq.html' %}
+    {% include 'webapp/html/team.html' %}
+    {% include 'webapp/html/contact.html' %}
 
 </main><!-- End #main -->
 
-{% include 'webapp/footer.html' %}
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
-<!--modals-->
-{% include 'webapp/omo_modal.html' %}
-{% include 'webapp/login_modal.html' %}
-{% include 'webapp/logout_modal.html' %}
+<!-- Modal -->
+{% include 'webapp/omo_edit.html' %}
 
+<!-- Login modal -->
+{% include 'webapp/login_temp.html' %}
+
+<!-- Logout modal -->
+{% include 'webapp/logout_temp.html' %}
 
 <!-- Vendor JS Files -->
 <script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -86,26 +86,36 @@
 
 
 <script>
-    const bat_fig = document.querySelector('#bat-fig').innerText
-    document.querySelector('#bat_prog').style.width = `${bat_fig}%`
+    const bat_fig = document.querySelector('.bat-fig').innerText
+    const bat_prog_bar = document.querySelector('.bat-prog')
+    const bat_prog = document.querySelector('.bat_prog_col')
+
+    bat_prog_bar.style.width = `${bat_fig}%`
 
 
-    const bat_prog = document.querySelector('#bat_prog')
+
+
     const color_box = document.querySelector('.color_box_input')
         if(bat_fig < 21){
             bat_prog.style.backgroundColor = "#ff0000";
+            color_box.value = "#ff0000";
         }else if(bat_fig < 41){
             bat_prog.style.backgroundColor = "#ff8000";
+            color_box.value = "#ff8000";
         }else if(bat_fig < 61){
             bat_prog.style.backgroundColor = "#ffff00";
+            color_box.value = "#ffff00";
         }else if(bat_fig < 81){
             bat_prog.style.backgroundColor = "#80ff00";
+            color_box.value = "#80ff00";
         }else if(bat_fig <= 100){
             bat_prog.style.backgroundColor = "#00ff00";
+            color_box.value = "#00ff00";
         }
 
-    let runtime_info = document.querySelector('#runtime_info')
-    let second = parseInt(parseInt(runtime_info.innerText) / 1000);
+    <!-- author:고세환 -->
+    let p_run_time = document.querySelector('.runtime_info')
+    let second = parseInt(parseInt(p_run_time.innerText) / 1000);
 
     let minute = parseInt(second / 60);
     second = second % 60;
@@ -123,11 +133,14 @@
     if (second > 0){
        result += second + '초';
     }
-    runtime_info.innerText = result;
+    if (second == 0){
+      result = 'NULL';
+    }
+    p_run_time.innerText = result;
 
     document.querySelector('.robot_input').addEventListener('submit', (e) => {
         const bat_fig = e.target.battery.value
-        bat_prog.style.width = `${bat_fig}%`
+        bat_prog_bar.style.width = `${bat_fig}%`
 
         if(bat_fig < 21){
             bat_prog.style.backgroundColor = "#ff0000";
@@ -152,6 +165,7 @@
 
 
 <script src="https://kit.fontawesome.com/49d0ed2e0e.js" crossorigin="anonymous"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
