@@ -9,7 +9,6 @@ from django.views.generic import ListView
 class PostList(ListView):
    model = Info
    ordering = '-pk'
-   paginate_by = 7
 
 
 def calc_time(ms):

@@ -8,6 +8,44 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.text_center{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    width : %;
+}
+
+#setRows {
+  width: 500px;
+}
+#products {
+  border-collapse:collapse;
+  margin-bottom: 10px;
+}
+
+.off-screen {
+  display: none;
+}
+#review_nav {
+  text-align: center;
+  display:flex;
+  justify-content : center;
+  margin-top : 50px;
+}
+#review_nav a {
+  display: inline-block;
+  padding: 3px 5px;
+  margin-right: 10px;
+  font-family:Tahoma;
+  background: #ccc;
+  color: #000;
+  text-decoration: none;
+}
+#review_nav a.active {
+  background: #333;
+  color: #fff;
+}
+
 .info_review{
     display : flex;
     justify-content : flex-start;
@@ -1107,7 +1145,6 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
   overflow: hidden;
 }
 
