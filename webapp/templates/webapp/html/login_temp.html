@@ -1,0 +1,48 @@
+<!-- Login modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body logmodalbody">
+                <div>
+                    {% load static %}
+                    <div class="signin_temp">
+                        <div class="signin_form">
+                            <div class="signin_img_box">
+                                <img class="signin_img" src="{% static 'webapp/assets/img/login.jpg' %}">
+                            </div>
+                            <form action="{% url 'webapp:login' %}" method="post" class="login_form">{% csrf_token %}
+                                <div class="signin_input">
+                                    <div class="signin_username">
+                                        <div class="signin_username_con">
+                                            <span class="signin_icon"><i class="fa-regular fa-user"></i></span>
+                                            <input type="input" name="username" placeholder="UserName"
+                                                   class="username_input">
+                                        </div>
+                                    </div>
+                                    <div class="signin_passward">
+                                        <div class="signin_passward_con">
+                                            <span class="signin_icon"><i class="fa-solid fa-lock"></i></span>
+                                            <input type="password" name="password" placeholder="PassWord"
+                                                   class="passward_input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="signin_btn">
+                                    <input type="submit" value="Login" class="signin_btn1">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

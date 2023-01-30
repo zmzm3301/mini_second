@@ -1,0 +1,47 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">정보 입력</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'webapp:createform' %}" class="robot_input">
+                    <div class="modalForm">
+                        <div>
+                            <div>
+                                배터리<input type="text" name="battery" id="batteryInput">
+                            </div>
+                            <br>
+                            <div>
+                                경과 시간<input type="text" name="runtime" id="runtimeInput">
+                            </div>
+                            <br>
+                            <div>
+                                색상<input type="color" name="color" id="colorInput">
+                            </div>
+                            <br>
+                            <div>
+                                펌웨어 버전
+                                <select name="firmV">
+                                    <option>r1m_v2.32</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="buttonArea">
+                            <div>
+                                <button type="submit" class="btn btn-secondary">입력</button>
+                            </div>
+                            <div class="inputButton">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
