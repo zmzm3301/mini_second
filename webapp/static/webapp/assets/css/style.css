@@ -8,6 +8,75 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.info_review{
+    display : flex;
+    justify-content : flex-start;
+}
+
+#thText{
+  font-weight:normal;
+}
+
+
+.click{
+  border-bottom: 1px solid rgb(228, 91, 91);
+  color: rgb(228, 91, 91);
+}
+
+.panel-faq-container {
+  margin-bottom: -10px;
+
+}
+
+.panel-faq-title {
+
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  font-size: 17px;
+
+
+}
+
+
+.panel-faq-title:hover{
+  color: rgb(228, 91, 91);
+}
+
+
+.panel-faq-answer {
+  margin-left: 30px;
+  height: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  /* 변화가 시작되는 쪽에다가 transition 적용해준다 0 -> 300px
+  왜? 닫기 버튼을 누를 때 변화가 티남 */
+  transition: all 0.3s;
+}
+
+#btn-all-close {
+  margin-bottom: 10px;
+  background-color: #18ab64;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 25px;
+  float: right;
+  border-radius: 10px;
+}
+
+#btn-all-close:hover {
+  background-color: #18ab64;
+  color: rgb(235, 80, 80);
+  transition: all 0.35s;
+}
+
+.active1 {
+  display: flex;
+  /* 높이를 정해줘야지만 transition이 적용됨 */
+  height: 60px;
+}
 
 .logmodalbody{
     display : flex;
