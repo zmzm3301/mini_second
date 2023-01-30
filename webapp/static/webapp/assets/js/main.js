@@ -4,6 +4,10 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
+
+
 window.onload = () => {
   // panel-faq-container
   const panelFaqContainer = document.querySelectorAll(".panel-faq-container"); // NodeList 객체
