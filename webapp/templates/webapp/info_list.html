@@ -51,70 +51,70 @@
 
 <main id="main">
 
-<!-- TODO: about.html로 옮겼을 때 충돌나는 부분 수정할 것 -->
+    <!-- TODO: about.html로 옮겼을 때 충돌나는 부분 수정할 것 -->
     <!-- ======= About Section ======= -->
-<section id="about" class="about">
-    <div class="container">
+    <section id="about" class="about">
+        <div class="container">
 
-        <div class="section-title">
-            <h2>Info</h2>
-            <h3>OMO R1MINI <span>실시간 정보</span></h3>
-            <p>실시간 정보를 입력할 수 있습니다.</p>
-        </div>
-
-        <div class="row content">
             <div class="section-title">
+                <h2>Info</h2>
+                <h3>OMO R1MINI <span>실시간 정보</span></h3>
+                <p>실시간 정보를 입력할 수 있습니다.</p>
+            </div>
 
-                <!-- Project Card Example -->
-                {% if info_list %}
-                {% recent_posts 1 as posts %}
-                {% for p in posts %}
+            <div class="row content">
+                <div class="section-title">
 
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <div class="infoarea">
-                            <h6 class="m-0 font-weight-bold text-primary" id="infoTITLE">INFO</h6>
-                            {% if user.is_authenticated %}
-                            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
-                               data-bs-toggle="modal"
-                               data-bs-target="#exampleModal">INPUT</a>
-                            {% endif %}
+                    <!-- Project Card Example -->
+                    {% if info_list %}
+                    {% recent_posts 1 as posts %}
+                    {% for p in posts %}
 
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <div class="infoarea">
+                                <h6 class="m-0 font-weight-bold text-primary" id="infoTITLE">INFO</h6>
+                                {% if user.is_authenticated %}
+                                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal">INPUT</a>
+                                {% endif %}
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="infoTop">
-                            <div class="bat">
-                                <h4 class="small font-weight-bold">BATTERY<span class="float-right bat-fig"
-                                                                                id="bat-fig">
+                        <div class="card-body">
+                            <div class="infoTop">
+                                <div class="bat">
+                                    <h4 class="small font-weight-bold">BATTERY<span class="float-right bat-fig"
+                                                                                    id="bat-fig">
                         {{ p.battery }}
                       </span></h4>
-                                <div class="progress mb-4">
-                                    <div class="progress bat-prog" id="bat_prog" role="progressbar"
-                                         aria-label="Animated striped example" aria-valuenow="20"
-                                         aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bat_prog_col"
-                                             id="bat_prog_col" style="width: 100%"></div>
+                                    <div class="progress mb-4">
+                                        <div class="progress bat-prog" id="bat_prog" role="progressbar"
+                                             aria-label="Animated striped example" aria-valuenow="20"
+                                             aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bat_prog_col"
+                                                 id="bat_prog_col" style="width: 100%"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="infoBottom">
-                                <div class="colInfo mb-4">
-                                    <div>
-                                        <h4 class="small font-weight-bold color_box_fig">COLOR<span
-                                                class="float-right">
+                                <br>
+                                <div class="infoBottom">
+                                    <div class="colInfo mb-4">
+                                        <div>
+                                            <h4 class="small font-weight-bold color_box_fig">COLOR<span
+                                                    class="float-right">
 
                         <div>
                           <input class="color_box_input" type="color" value="{{ p.color }}" disabled/>
                         </div>
                         </span></h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="runInfo mb-4">
-                                    <div>
-                                        <h4 class="small font-weight-bold runtime_fig">RUN TIME<span
-                                                class="float-right bat-fig">
+                                    <div class="runInfo mb-4">
+                                        <div>
+                                            <h4 class="small font-weight-bold runtime_fig">RUN TIME<span
+                                                    class="float-right bat-fig">
 
                       <div>
                         <h3 class="runtime_info">
@@ -123,70 +123,70 @@
                       </div>
 
                       </span></h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="firmV mb-4">
-                                    <h4 class="small font-weight-bold firmV_fig">firmV<span
-                                            class="float-right bat-fig">
+                                    <div class="firmV mb-4">
+                                        <h4 class="small font-weight-bold firmV_fig">firmV<span
+                                                class="float-right bat-fig">
                       <div>
                         <h3 class="firmV_info">
                           {{ p.firmV }}
                         </h3>
                       </div>
                       </span></h4>
-                                </div>
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {% endfor %}
-                {% else %}
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <div class="infoarea">
-                            <h6 class="m-0 font-weight-bold text-primary infoTitle">INFO</h6>
-                            {% if user.is_authenticated %}
-                            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
-                               data-bs-toggle="modal"
-                               data-bs-target="#exampleModal">INPUT</a>
-                            {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <div class="infoarea">
+                                <h6 class="m-0 font-weight-bold text-primary infoTitle">INFO</h6>
+                                {% if user.is_authenticated %}
+                                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal">INPUT</a>
+                                {% endif %}
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="infoTop">
-                            <div class="bat">
-                                <h4 class="small font-weight-bold">BATTERY<span class="float-right bat-fig">
+                        <div class="card-body">
+                            <div class="infoTop">
+                                <div class="bat">
+                                    <h4 class="small font-weight-bold">BATTERY<span class="float-right bat-fig">
                         0
                       </span></h4>
-                                <div class="progress mb-4">
-                                    <div class="progress bat-prog" role="progressbar"
-                                         aria-label="Animated striped example" aria-valuenow="20"
-                                         aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bat_prog_col"
-                                             style="width: 100%"></div>
+                                    <div class="progress mb-4">
+                                        <div class="progress bat-prog" role="progressbar"
+                                             aria-label="Animated striped example" aria-valuenow="20"
+                                             aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bat_prog_col"
+                                                 style="width: 100%"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="infoBottom">
-                                <div class="colInfo mb-4">
-                                    <div>
-                                        <h4 class="small font-weight-bold color_box_fig">COLOR<span
-                                                class="float-right">
+                                <br>
+                                <div class="infoBottom">
+                                    <div class="colInfo mb-4">
+                                        <div>
+                                            <h4 class="small font-weight-bold color_box_fig">COLOR<span
+                                                    class="float-right">
 
                         <div>
                           <input class="color_box_input" type="color" value="#000000" disabled/>
                         </div>
                         </span></h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="runInfo mb-4">
-                                    <div>
-                                        <h4 class="small font-weight-bold runtime_fig">RUN TIME<span
-                                                class="float-right bat-fig">
+                                    <div class="runInfo mb-4">
+                                        <div>
+                                            <h4 class="small font-weight-bold runtime_fig">RUN TIME<span
+                                                    class="float-right bat-fig">
 
                       <div>
                         <h3 class="runtime_info">
@@ -195,32 +195,32 @@
                       </div>
 
                       </span></h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="firmV mb-4">
-                                    <h4 class="small font-weight-bold firmV_fig">firmV<span
-                                            class="float-right bat-fig">
+                                    <div class="firmV mb-4">
+                                        <h4 class="small font-weight-bold firmV_fig">firmV<span
+                                                class="float-right bat-fig">
                       <div>
                         <h3>
                           NULL
                         </h3>
                       </div>
                       </span></h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
+
         </div>
 
-    </div>
-
-    </div>
+        </div>
 
 
-</section><!-- End About Section -->
+    </section><!-- End About Section -->
 
     {% include 'webapp/html/accordion.html' %}
     {% include 'webapp/html/cta.html' %}
@@ -249,7 +249,6 @@
 <!-- Template Main JS File -->
 <script src="{% static 'webapp/assets/js/main.js' %}"></script>
 
-
 <script>
     const bat_fig = document.querySelector('.bat-fig').innerText
     const bat_prog_bar = document.querySelector('.bat-prog')
@@ -257,73 +256,71 @@
 
     bat_prog_bar.style.width = `${bat_fig}%`
 
-
-
-
     const color_box = document.querySelector('.color_box_input')
         if(bat_fig < 21){
             bat_prog.style.backgroundColor = "#ff0000";
-            color_box.value = "#ff0000";
         }else if(bat_fig < 41){
             bat_prog.style.backgroundColor = "#ff8000";
-            color_box.value = "#ff8000";
+<!--            color_box.value = "#ff8000";-->
         }else if(bat_fig < 61){
             bat_prog.style.backgroundColor = "#ffff00";
-            color_box.value = "#ffff00";
+<!--            color_box.value = "#ffff00";-->
         }else if(bat_fig < 81){
             bat_prog.style.backgroundColor = "#80ff00";
-            color_box.value = "#80ff00";
+<!--            color_box.value = "#80ff00";-->
         }else if(bat_fig <= 100){
             bat_prog.style.backgroundColor = "#00ff00";
-            color_box.value = "#00ff00";
+<!--            color_box.value = "#00ff00";-->
         }
 
-    <!-- author:고세환 -->
-    let p_run_time = document.querySelector('.runtime_info')
-    let second = parseInt(parseInt(p_run_time.innerText) / 1000);
 
-    let minute = parseInt(second / 60);
-    second = second % 60;
+</script>
+<!-- author:고세환
+let p_run_time = document.querySelector('.runtime_info')
+let second = parseInt(parseInt(p_run_time.innerText) / 1000);
 
-    let hour   = parseInt(minute / 60);
-    minute = minute % 60;
+let minute = parseInt(second / 60);
+second = second % 60;
 
-    let result = '';
-    if (hour > 0){
-       result += hour + '시간 ';
-    }
-    if (minute > 0){
-       result += minute + '분 ';
-    }
-    if (second > 0){
-       result += second + '초';
-    }
-    if (second == 0){
-      result = 'NULL';
-    }
-    p_run_time.innerText = result;
+let hour   = parseInt(minute / 60);
+minute = minute % 60;
 
-    document.querySelector('.robot_input').addEventListener('submit', (e) => {
-        const bat_fig = e.target.battery.value
-        bat_prog_bar.style.width = `${bat_fig}%`
+let result = '';
+if (hour > 0){
+   result += hour + '시간 ';
+}
+if (minute > 0){
+   result += minute + '분 ';
+}
+if (second > 0){
+   result += second + '초';
+}
+if (second == 0){
+  result = 'NULL';
+}
+p_run_time.innerText = result; -->
+<script>
+document.querySelector('.robot_input').addEventListener('submit', (e) => {
+const bat_fig = e.target.battery.value
+bat_prog_bar.style.width = `${bat_fig}%`
 
-        if(bat_fig < 21){
-            bat_prog.style.backgroundColor = "#ff0000";
-            color_box.value = "#ff0000";
-        }else if(bat_fig < 41){
-            bat_prog.style.backgroundColor = "#ff8000";
-            color_box.value = "#ff8000";
-        }else if(bat_fig < 61){
-            bat_prog.style.backgroundColor = "#ffff00";
-            color_box.value = "#ffff00";
-        }else if(bat_fig < 81){
-            bat_prog.style.backgroundColor = "#80ff00";
-            color_box.value = "#80ff00";
-        }else if(bat_fig <= 100){
-            bat_prog.style.backgroundColor = "#00ff00";
-            color_box.value = "#00ff00";
-        }
-    })
+if(bat_fig < 21){
+bat_prog.style.backgroundColor = "#ff0000";
+color_box.value = "#ff0000";
+}else if(bat_fig < 41){
+bat_prog.style.backgroundColor = "#ff8000";
+color_box.value = "#ff8000";
+}else if(bat_fig < 61){
+bat_prog.style.backgroundColor = "#ffff00";
+color_box.value = "#ffff00";
+}else if(bat_fig < 81){
+bat_prog.style.backgroundColor = "#80ff00";
+color_box.value = "#80ff00";
+}else if(bat_fig <= 100){
+bat_prog.style.backgroundColor = "#00ff00";
+color_box.value = "#00ff00";
+}
+})
 
 </script>
 
