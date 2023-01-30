@@ -8,10 +8,592 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.logmodalbody{
+    display : flex;
+    justify-content: center;
+    width : 100%;
+    align-items : center;
+    flex-direction: columns;
+}
+
+.logmodala{
+    display : flex;
+    justify-content: center;
+    width : 400px;
+    align-items : center;
+}
+
+.logmodalb{
+    display : flex;
+    justify-content: center;
+    width : 400px;
+    align-items : center;
+}
+
+.logbtn{
+    justify-content:center;
+}
+.logout_temp{
+    display:flex;
+    flex-direction:row;
+    background: url("../img/blog/logout.jpg");
+    width : 500px;
+    height : 430px;
+    background-size : cover;
+}
+.login_temp{
+    background-color : skyblue;
+    width : 400px;
+    height : 400px;
+}
+
+
+.login_form{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.signin_h4{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.signin_username{
+    border: black 1px solid;
+    border-radius: 6px 6px 0px 0px;
+    width: 400px;
+    height: 50px;
+}
+
+.signin_username_con{
+    display: flex;
+    margin-left: 50px;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+}
+
+.username_input{
+    border: none;
+
+}
+
+.signin_passward{
+    border: black 1px solid;
+    border-top: 0px;
+    border-radius: 0px 0px 6px 6px;
+    width: 400px;
+    height: 50px;
+}
+
+.signin_passward_con{
+    display: flex;
+    margin-left: 50px;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+}
+
+.passward_input{
+    border: none;
+}
+
+.signin_icon{
+    margin: 8px;
+}
+
+.signin_btn{
+    width: 400px;
+    height: 120px;
+    margin: 0px 30px 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signin_img_box{
+    display : flex;
+    justify-content : center;
+}
+.signin_img{
+    display : flex;
+    width : 200px;
+    height : 200px;
+    background-size : cover;
+    justify-content : center;
+}
+
+.signin_btn1{
+    width: 400px;
+    height: 55px;
+    margin: 10px;
+    font-size: 1.3em;
+    background-color: beige;
+    border: gray 3px solid;
+    border-radius: 6px;
+    display : flex;
+    justify-content : center;
+}
+.signin_input{
+    margin : 30px;
+}
+
+
+#logoutmodalbody{
+    display:flex;
+    flex-direction:column;
+    align-self : center;
+    justify-content:center;
+    padding : 0px;
+}
+#logout_text{
+    margin : 8px;
+    display : flex;
+    justify-content : center;
+    font-weight : bold;
+}
+
+.logout_button{
+    display : flex;
+    justify-content : center;
+}
+
+
+
+
+.signin_form{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
+
+#loginButton{
+  text-align: right;
+
+}
+
+.btn-primary{
+  width: 70px;
+  height: 30px;
+ 
+}
+
+.inputButton{
+  margin-top: 12px;
+}
+
+.buttonArea{
+  margin-left: 10%;
+  
+}
+
+.modalForm{
+  display: flex;
+}
+
+#batteryInput{
+  margin-left: 40px;
+}
+
+#runtimeInput{
+  margin-left: 22px;
+}
+
+#colorInput{
+  margin-left: 53px;
+}
+
+.py-3 {
+  align-content: center;
+}
+
+.infoTITLE {
+  font-size: 30px;
+}
+
+
+
+p {
+  margin-bottom: 0.5em;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #00AE68;
+}
+
+.clear {
+  clear: both;
+}
+
+.pageTitle {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1em;
+  color: #00AE68;
+}
+
+.pageSubTitle {
+  margin-bottom: 0.5em;
+  font-size: 0.5em;
+  font-weight: 700;
+  line-height: 1em;
+  color: #222;
+}
+
+.articleTitle {
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1em;
+  color: #222;
+}
+
+.wrapper {
+  width: 600px;
+  margin: 20px auto;
+}
+
+a.button {
+  display: block;
+  position: relative;
+  float: left;
+  width: 80px;
+  padding: 0;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.btnBlueGreen {
+  background: #00AE68;
+  font-size: 14px;
+}
+
+.btnLightBlue {
+  background: #5DC8CD;
+}
+
+.btnOrange {
+  background: #FFAA40;
+}
+
+.btnPurple {
+  background: #A74982;
+}
+
+/* FADE */
+.btnFade.btnBlueGreen:hover {
+  background: #21825B;
+  text-decoration: none;
+}
+
+.btnFade.btnLightBlue:hover {
+  background: #01939A;
+}
+
+.btnFade.btnOrange:hover {
+  background: #FF8E00;
+}
+
+.btnFade.btnPurple:hover {
+  background: #6D184B;
+}
+
+/* 3D */
+.btnBlueGreen.btnPush {
+  box-shadow: 0px 5px 0px 0px #007144;
+}
+
+.btnLightBlue.btnPush {
+  box-shadow: 0px 5px 0px 0px #1E8185;
+}
+
+.btnOrange.btnPush {
+  box-shadow: 0px 5px 0px 0px #A66615;
+}
+
+.btnPurple.btnPush {
+  box-shadow: 0px 5px 0px 0px #6D184B;
+}
+
+.btnPush:hover {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.btnBlueGreen.btnPush:hover {
+  box-shadow: 0px 0px 0px 0px #007144;
+  text-decoration: none;
+}
+
+.btnLightBlue.btnPush:hover {
+  box-shadow: 0px 0px 0px 0px #1E8185;
+}
+
+.btnOrange.btnPush:hover {
+  box-shadow: 0px 0px 0px 0px #A66615;
+}
+
+.btnPurple.btnPush:hover {
+  box-shadow: 0px 0px 0px 0px #6D184B;
+}
+
+/* BORDER */
+.btnBlueGreen.btnBorder {
+  box-shadow: 0px 0px 0px 0px #21825B;
+}
+
+.btnBlueGreen.btnBorder:hover {
+  box-shadow: 0px 0px 0px 5px #21825B;
+}
+
+.btnLightBlue.btnBorder {
+  box-shadow: 0px 0px 0px 0px #01939A;
+}
+
+.btnLightBlue.btnBorder:hover {
+  box-shadow: 0px 0px 0px 5px #01939A;
+}
+
+.btnOrange.btnBorder {
+  box-shadow: 0px 0px 0px 0px #A66615;
+}
+
+.btnOrange.btnBorder:hover {
+  box-shadow: 0px 0px 0px 5px #A66615;
+}
+
+.btnPurple.btnBorder {
+  box-shadow: 0px 0px 0px 0px #6D184B;
+}
+
+.btnPurple.btnBorder:hover {
+  box-shadow: 0px 0px 0px 5px #6D184B;
+}
+
+/* FLOAT */
+.btnFloat {
+  background: none;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.btnFloat:before {
+  content: 'Float';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 50px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.btnBlueGreen.btnFloat:before {
+  background: #00AE68;
+}
+
+.btnLightBlue.btnFloat:before {
+  background: #5DC8CD;
+}
+
+.btnOrange.btnFloat:before {
+  background: #FFAA40;
+}
+
+.btnPurple.btnFloat:before {
+  background: #8D336A;
+}
+
+
+.btnFloat:before {
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.btnFloat:hover:before {
+  margin-top: -2px;
+  margin-left: 0px;
+  transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.25);
+}
+
+/* SLIDE */
+.btnSlide.btnBlueGreen {
+  background: 0;
+}
+
+.btnSlide .top {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 120px;
+  height: 50px;
+  background: #00AE68;
+  z-index: 10;
+  transition: all 0.2s;
+  border-radius: 5px;
+}
+
+.btnSlide.btnBlueGreen .top {
+  background: #00AE68;
+}
+
+.btnSlide.btnLightBlue .top {
+  background: #5DC8CD;
+}
+
+.btnSlide.btnOrange .top {
+  background: #FFAA40;
+}
+
+.btnSlide.btnPurple .top {
+  background: #A74982;
+}
+
+.btnSlide .bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 50px;
+  color: #000;
+  z-index: 5;
+  border-radius: 5px;
+}
+
+.btnSlide:hover .top {
+  top: 40px;
+}
+
+
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: none;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 400px;
+  height: 600px;
+
+  padding: 40px;
+
+  text-align: center;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.color_box {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
+
+.color_box_input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.firmV_fig{
+    display:flex;
+    flex-direction:column;
+}
+
+.firmV_info{
+    margin : 5px;
+    margin-top:5px;
+}
+
+.color_box_fig{
+    display:flex;
+    flex-direction:column;
+}
+
+.color_box_input::-webkit-color-swatch {
+  border: none;
+}
+
+.runtime_fig{
+    display:flex;
+    flex-direction : column;
+}
+
+
+
+.runtime_info{
+    margin : 5px;
+    margin-top : 5px;
+}
+
+.runInfo {
+
+  margin: auto 10%;
+}
+
+
+.colInfo {
+
+  margin: auto 10%;
+}
+
+.firmV {
+  margin: auto 10%;
+}
+
+.infoBottom {
+  display: flex;
+  justify-content: center;
+}
+
+.infoarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 a {
   color: #e43c5c;
@@ -359,10 +941,10 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100%;
-  top center;
+  height: 100vh;
+  background: url("../img/hero-bg.jpg") top center;
+  background-size: cover;
   position: relative;
-  padding: 0px;
 }
 
 #hero:before {
