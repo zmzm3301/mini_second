@@ -45,12 +45,9 @@
 </head>
 
 <body>
-
 {% include 'webapp/html/header.html' %}
 {% include 'webapp/html/hero.html' %}
-
 <main id="main">
-
     <!-- TODO: about.html로 옮겼을 때 충돌나는 부분 수정할 것 -->
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -79,7 +76,6 @@
                                    data-bs-toggle="modal"
                                    data-bs-target="#exampleModal">INPUT</a>
                                 {% endif %}
-
                             </div>
                         </div>
                         <div class="card-body">
@@ -222,6 +218,7 @@
 
     </section><!-- End About Section -->
 
+    {% include 'webapp/html/about.html' %}
     {% include 'webapp/html/accordion.html' %}
     {% include 'webapp/html/cta.html' %}
     {% include 'webapp/html/faq.html' %}
@@ -230,27 +227,34 @@
 
 </main><!-- End #main -->
 
+<!-- Footer + Modal -->
 {% include 'webapp/html/footer.html' %}
-
-<!-- Modal -->
-<!-- Login modal -->
-<!-- Logout modal -->
 {% include 'webapp/html/omo_edit.html' %}
 {% include 'webapp/html/login_temp.html' %}
 {% include 'webapp/html/logout_temp.html' %}
 
-<!-- Vendor JS Files -->
-<script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'webapp/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-<script src="{% static 'webapp/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-<script src="{% static 'webapp/assets/vendor/php-email-form/validate.js' %}"></script>
+<!--js -->
+<div id="js">
+    <!-- Vendor JS Files -->
+    <script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'webapp/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'webapp/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'webapp/assets/vendor/php-email-form/validate.js' %}"></script>
 
-<!-- Template Main JS File -->
-<script src="{% static 'webapp/assets/js/main.js' %}"></script>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-<script>
+    <!-- Template Main JS File -->
+    <script src="{% static 'webapp/assets/js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/49d0ed2e0e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- 배터리 색상 -->
+    <script>
     const bat_fig = document.querySelector('.bat-fig').innerText
     const bat_prog_bar = document.querySelector('.bat-prog')
     const bat_prog = document.querySelector('.bat_prog_col')
@@ -258,49 +262,21 @@
     bat_prog_bar.style.width = `${bat_fig}%`
 
     const color_box = document.querySelector('.color_box_input')
-        if(bat_fig < 21){
+        if(bat_fig <= 20){
             bat_prog.style.backgroundColor = "#ff0000";
-        }else if(bat_fig < 41){
+        }else if(bat_fig <= 40){
             bat_prog.style.backgroundColor = "#ff8000";
-<!--            color_box.value = "#ff8000";-->
-        }else if(bat_fig < 61){
+        }else if(bat_fig <= 60){
             bat_prog.style.backgroundColor = "#ffff00";
-<!--            color_box.value = "#ffff00";-->
-        }else if(bat_fig < 81){
+        }else if(bat_fig <= 80){
             bat_prog.style.backgroundColor = "#80ff00";
-<!--            color_box.value = "#80ff00";-->
         }else if(bat_fig <= 100){
             bat_prog.style.backgroundColor = "#00ff00";
-<!--            color_box.value = "#00ff00";-->
         }
 
+    </script>
 
-</script>
-<!-- author:고세환
-let p_run_time = document.querySelector('.runtime_info')
-let second = parseInt(parseInt(p_run_time.innerText) / 1000);
-
-let minute = parseInt(second / 60);
-second = second % 60;
-
-let hour   = parseInt(minute / 60);
-minute = minute % 60;
-
-let result = '';
-if (hour > 0){
-   result += hour + '시간 ';
-}
-if (minute > 0){
-   result += minute + '분 ';
-}
-if (second > 0){
-   result += second + '초';
-}
-if (second == 0){
-  result = 'NULL';
-}
-p_run_time.innerText = result; -->
-<script>
+    <script>
 document.querySelector('.robot_input').addEventListener('submit', (e) => {
 const bat_fig = e.target.battery.value
 bat_prog_bar.style.width = `${bat_fig}%`
@@ -394,17 +370,8 @@ $setRows.submit(function (e) {
 });
 
 $setRows.submit();
-
-</script>
-
-
-<script src="https://kit.fontawesome.com/49d0ed2e0e.js" crossorigin="anonymous"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"> </script>
-
+    </script>
+</div>
 
 </body>
 
