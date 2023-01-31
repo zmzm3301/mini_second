@@ -7,15 +7,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OMO-mini</title>
 
     <!-- Favicons -->
-    <link href="{% static 'webapp/assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'webapp/assets/img/apple-touch-icon.png' %}" rel="icon">
     <link href="{% static 'webapp/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
             rel="stylesheet">
 
     <!-- Vendor CSS Files -->
@@ -27,8 +26,7 @@
     <link href="{% static 'webapp/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
     <link href="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
+
 
     <!-- =======================================================
     * Template Name: Tempo - v4.10.0
@@ -38,6 +36,9 @@
     ======================================================== -->
 
     <link rel="stylesheet" href="{% static 'webapp/bootstrap/bootstrap.min.css' %}" media="screen">
+    <!-- Template Main CSS File -->
+    <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
@@ -56,7 +57,7 @@
             <div class="section-title">
                 <h2>Info</h2>
                 <h3>OMO R1MINI <span>실시간 정보</span></h3>
-                <p>실시간 정보를 입력할 수 있습니다.</p>
+                <p class="title_p">실시간 정보를 입력할 수 있습니다.</p>
             </div>
 
             <div class="row content">
@@ -75,6 +76,8 @@
                                 <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
                                    data-bs-toggle="modal"
                                    data-bs-target="#exampleModal">INPUT</a>
+                                {% else %}
+                                <h6>로그인이 필요합니다.</h6>
                                 {% endif %}
                             </div>
                         </div>
@@ -221,7 +224,6 @@
     {% include 'webapp/html/about.html' %}
     {% include 'webapp/html/accordion.html' %}
     {% include 'webapp/html/cta.html' %}
-    {% include 'webapp/html/faq.html' %}
     {% include 'webapp/html/team.html' %}
     {% include 'webapp/html/contact.html' %}
 
@@ -274,7 +276,6 @@
             bat_prog.style.backgroundColor = "#00ff00";
         }
 
-
     </script>
 
     <script>
@@ -303,11 +304,9 @@ color_box.value = "#00ff00";
 
     var $setRows = $('#setRows');
 
-$setRows.submit(function (e) {
+$setRows.click(function (e) {
   e.preventDefault();
-  var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
-
-//    console.log(typeof rowPerPage);
+  var rowPerPage = 7; //한 페이지에 보이는 데이터 개수
 
   var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
   if (!rowPerPage) {
@@ -319,10 +318,9 @@ $setRows.submit(function (e) {
 
   $products.after('<div id="review_nav">');
 
-
   var $tr = $($products).find('tr');
   var rowTotals = $tr.length;
-//  console.log(rowTotals);
+  console.log(rowTotals);
 
   var pageTotal = Math.ceil(rowTotals/ rowPerPage);
   var i = 0;
@@ -371,9 +369,8 @@ $setRows.submit(function (e) {
 });
 
 $setRows.submit();
-
     </script>
-    <script>
+        <script>
 let p_run_time = document.querySelector('.runtime_info')
 let accor_runtime = document.querySelector('#accor_runtime')
 let second = parseInt(parseInt(p_run_time.innerText) / 1000);
@@ -398,7 +395,7 @@ if (!second && !minute && !hour){
   result = 'NULL';
 }
 p_run_time.innerText = result;
-accor_runtime.innerText = result;
+accor_runtime.innerText = '구동시간 : ' + result;
 
     </script>
 </div>
