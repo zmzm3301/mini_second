@@ -1,6 +1,6 @@
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Info
 from django.views.generic import ListView
 
@@ -59,6 +59,14 @@ def createform(request):
    # std.date = get_date(request.GET['created_at'])
    std.save()
    return redirect('/')
+
+def data_delete(request, pk):
+    del_data = get_object_or_404(Info, pk=pk)
+    del_data.delete()
+    std = Info.objects.all().order_by('-pk')
+    return redirect('/', {
+        'std' : std
+    })
 
 
 def signin(request):
