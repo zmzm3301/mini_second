@@ -56,7 +56,7 @@ def createform(request):
    std.color = request.GET['color']
    std.runtime = get_runtime(request.GET['runtime'])
    std.firmV = request.GET['firmV']
-   std.date = get_date(request.GET['created_at'])
+   # std.date = get_date(request.GET['created_at'])
    std.save()
    return redirect('/')
 
