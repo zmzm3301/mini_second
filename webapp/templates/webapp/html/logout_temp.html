@@ -9,11 +9,10 @@
             </div>
             <div class="modal-body" id="logoutmodalbody">
                 <div class="logout_temp"></div>
-                <div id="logout_tdiv"><h3 id="logout_text">로그아웃 되었습니다.</h3></div>
-            </div>
-            <div class="modal-footer">
+                <div id="logout_tdiv"><h3 id="logout_text">로그아웃 하시겠습니까?</h3></div>
                 <form action="{% url 'webapp:logout' %}" method="post" class="col-md-4 logout_button">
                     {% csrf_token %}
+                    <input type="button" data-bs-dismiss="modal" value="취소">
                     <input type="submit" value="확인">
                 </form>
             </div>
