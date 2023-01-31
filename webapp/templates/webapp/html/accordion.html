@@ -1,0 +1,43 @@
+<!-- accordion -->
+<div class="container">
+    <div class="section-title">
+        <p>지난 기록들을 확인할 수 있습니다.</p>
+    </div>
+    <div class="text-center">
+        <form action="" id="setRows">
+            <input type="text" name="rowPerPage" value="7">
+        </form>
+        <button id="btn-all-close">ALL Close</button>
+    </div>
+    <br>
+    <table class="table table-bordered table-striped table-hover data_review">
+        <thead class="thead-light text-center">
+        <th id="thText">날짜를 클릭해주세요.</th>
+        </thead>
+        <tbody id="products" class="text-center">
+        {% for s in info_list %}
+        <tr>
+            <td>
+                <div class="panel-faq-container review_data">
+                    <p class="panel-faq-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ s.created_at }}</p>
+                    </h5>
+                    <div class="panel-faq-answer">
+                        <div class="col-md-3 info_review">배터리 : {{ s.battery }}%</div>
+                        <div class="col-md-4 info_review" id="accor_runtime">구동 시간 : {{ s.runtime }}</div>
+                        <div class="col-md-3 info_review">
+                            LED : <input class="color_box_inputs" type="color" value="{{ s.color }}" disabled/>
+                        </div>
+                        <div class="col-md-2 info_review">
+                            <a href="{% url 'webapp:delete' s.pk %}">기록 삭제</a>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div id="review_nav"></div>
+</div>
+<!-- End accordion section -->
