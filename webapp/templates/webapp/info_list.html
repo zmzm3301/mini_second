@@ -264,6 +264,7 @@
 
     bat_prog_bar.style.width = `${bat_fig}%`
 
+
     const color_box = document.querySelector('.color_box_input')
         if(bat_fig <= 20){
             bat_prog.style.backgroundColor = "#ff0000";
@@ -284,7 +285,9 @@
     <script>
 document.querySelector('.robot_input').addEventListener('submit', (e) => {
 const bat_fig = e.target.battery.value
+
 bat_prog_bar.style.width = `${bat_fig}%`
+
 
 if(bat_fig < 21){
 bat_prog.style.backgroundColor = "#ff0000";
