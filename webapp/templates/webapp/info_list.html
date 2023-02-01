@@ -27,6 +27,8 @@
     <link href="{% static 'webapp/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
     <link href="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{% static 'webapp/bootstrap/bootstrap.min.css' %}" media="screen">
+
     <!-- Template Main CSS File -->
     <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
 
@@ -37,7 +39,7 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 
-    <link rel="stylesheet" href="{% static 'webapp/bootstrap/bootstrap.min.css' %}" media="screen">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
@@ -261,6 +263,7 @@
 
     bat_prog_bar.style.width = `${bat_fig}%`
 
+
     const color_box = document.querySelector('.color_box_input')
         if(bat_fig <= 20){
             bat_prog.style.backgroundColor = "#ff0000";
@@ -274,12 +277,15 @@
             bat_prog.style.backgroundColor = "#00ff00";
         }
 
+
     </script>
 
     <script>
 document.querySelector('.robot_input').addEventListener('submit', (e) => {
 const bat_fig = e.target.battery.value
+
 bat_prog_bar.style.width = `${bat_fig}%`
+
 
 if(bat_fig < 21){
 bat_prog.style.backgroundColor = "#ff0000";
@@ -370,6 +376,35 @@ $setRows.submit(function (e) {
 });
 
 $setRows.submit();
+
+    </script>
+    <script>
+let p_run_time = document.querySelector('.runtime_info')
+let accor_runtime = document.querySelector('#accor_runtime')
+let second = parseInt(parseInt(p_run_time.innerText) / 1000);
+
+let minute = parseInt(second / 60);
+second = second % 60;
+
+let hour   = parseInt(minute / 60);
+minute = minute % 60;
+
+let result = '';
+if (hour > 0){
+   result += hour + '시간 ';
+}
+if (minute > 0){
+   result += minute + '분 ';
+}
+if (second > 0){
+   result += second + '초';
+}
+if (!second && !minute && !hour){
+  result = 'NULL';
+}
+p_run_time.innerText = result;
+accor_runtime.innerText = result;
+
     </script>
 </div>
 
