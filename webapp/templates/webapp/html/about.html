@@ -1,0 +1,172 @@
+{% load recent_post %}
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Info</h2>
+            <h3>OMO R1MINI <span>실시간 정보</span></h3>
+            <p class="title_p">실시간 정보를 입력할 수 있습니다.</p>
+        </div>
+
+        <div class="row content">
+            <div class="section-title">
+
+                <!-- Project Card Example -->
+                {% if info_list %}
+                {% recent_posts 1 as posts %}
+                {% for p in posts %}
+
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <div class="infoarea">
+                            <h6 class="m-0 font-weight-bold text-primary" id="infoTITLE">INFO</h6>
+                            {% if user.is_authenticated %}
+                            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                               data-bs-toggle="modal"
+                               data-bs-target="#exampleModal">INPUT</a>
+                            {% else %}
+                            <h6>로그인이 필요합니다.</h6>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="infoTop">
+                            <div class="bat">
+                                <h4 class="small font-weight-bold">BATTERY<span class="float-right bat-fig"
+                                                                                id="bat-fig">
+                        {{ p.battery }}
+                      </span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress bat-prog" id="bat_prog" role="progressbar"
+                                         aria-label="Animated striped example" aria-valuenow="20"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bat_prog_col"
+                                             id="bat_prog_col" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="infoBottom">
+                                <div class="colInfo mb-4">
+                                    <div>
+                                        <h4 class="small font-weight-bold color_box_fig">COLOR<span
+                                                class="float-right">
+
+                        <div>
+                          <input class="color_box_input" type="color" value="{{ p.color }}" disabled/>
+                        </div>
+                        </span></h4>
+                                    </div>
+                                </div>
+                                <div class="runInfo mb-4">
+                                    <div>
+                                        <h4 class="small font-weight-bold runtime_fig">RUN TIME<span
+                                                class="float-right bat-fig">
+
+                      <div>
+                        <h3 class="runtime_info">
+                          {{ p.runtime }}
+                        </h3>
+                      </div>
+
+                      </span></h4>
+                                    </div>
+                                </div>
+                                <div class="firmV mb-4">
+                                    <h4 class="small font-weight-bold firmV_fig">firmV<span
+                                            class="float-right bat-fig">
+                      <div>
+                        <h3 class="firmV_info">
+                          {{ p.firmV }}
+                        </h3>
+                      </div>
+                      </span></h4>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+                {% else %}
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <div class="infoarea">
+                            <h6 class="m-0 font-weight-bold text-primary infoTitle">INFO</h6>
+                            {% if user.is_authenticated %}
+                            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                               data-bs-toggle="modal"
+                               data-bs-target="#exampleModal">INPUT</a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="infoTop">
+                            <div class="bat">
+                                <h4 class="small font-weight-bold">BATTERY<span class="float-right bat-fig">
+                        0
+                      </span></h4>
+                                <div class="progress mb-4">
+                                    <div class="progress bat-prog" role="progressbar"
+                                         aria-label="Animated striped example" aria-valuenow="20"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bat_prog_col"
+                                             style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="infoBottom">
+                                <div class="colInfo mb-4">
+                                    <div>
+                                        <h4 class="small font-weight-bold color_box_fig">COLOR<span
+                                                class="float-right">
+
+                        <div>
+                          <input class="color_box_input" type="color" value="#000000" disabled/>
+                        </div>
+                        </span></h4>
+                                    </div>
+                                </div>
+                                <div class="runInfo mb-4">
+                                    <div>
+                                        <h4 class="small font-weight-bold runtime_fig">RUN TIME<span
+                                                class="float-right bat-fig">
+
+                      <div>
+                        <h3 class="runtime_info">
+                          0
+                        </h3>
+                      </div>
+
+                      </span></h4>
+                                    </div>
+                                </div>
+                                <div class="firmV mb-4">
+                                    <h4 class="small font-weight-bold firmV_fig">firmV<span
+                                            class="float-right bat-fig">
+                      <div>
+                        <h3>
+                          NULL
+                        </h3>
+                      </div>
+                      </span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+</section><!-- End About Section -->
