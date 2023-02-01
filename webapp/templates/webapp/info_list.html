@@ -27,6 +27,11 @@
     <link href="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
 
+    <link rel="stylesheet" href="{% static 'webapp/bootstrap/bootstrap.min.css' %}" media="screen">
+    <!-- Template Main CSS File -->
+    <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
+
+
     <!-- =======================================================
     * Template Name: Tempo - v4.10.0
     * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
@@ -34,9 +39,7 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 
-    <link rel="stylesheet" href="{% static 'webapp/bootstrap/bootstrap.min.css' %}" media="screen">
-    <!-- Template Main CSS File -->
-    <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
+
 
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -276,6 +279,7 @@
         }
 
 
+
     </script>
 
     <script>
@@ -370,10 +374,12 @@ $setRows.click(function (e) {
 
 $setRows.submit();
 
+
     </script>
     <script>
 let p_run_time = document.querySelector('.runtime_info')
 let accor_runtime = document.querySelector('#accor_runtime')
+
 let second = parseInt(parseInt(p_run_time.innerText) / 1000);
 
 let minute = parseInt(second / 60);
@@ -396,7 +402,9 @@ if (!second && !minute && !hour){
   result = 'NULL';
 }
 p_run_time.innerText = result;
+if(accor_runtime != null){
 accor_runtime.innerText = '구동시간 : ' + result;
+}
 
 
     </script>
@@ -413,7 +421,6 @@ accor_runtime.innerText = '구동시간 : ' + result;
         let arr = title[i].innerText;
         arr = arr.trim();
         arr = arr.split(" ");
-        console.log(arr);
 
         let year = parseInt(arr[2].slice(0, -1));
         let month = pad(mon[arr[0]]);
@@ -425,6 +432,7 @@ accor_runtime.innerText = '구동시간 : ' + result;
         let result = year + "년 " + month + "월 " + day + "일 " + ap + " "+ hour + "시 " + minute + "분";
         title[i].innerText = result;
     }
+
 
     </script>
 </div>

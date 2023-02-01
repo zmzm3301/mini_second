@@ -18,6 +18,7 @@ window.onload = () => {
   // btn-all-close
   const btnAllClose = document.querySelector("#btn-all-close");
 
+  if (btnAllClose == null) return;
   // 반복문 순회하면서 해당 FAQ제목 클릭시 콜백 처리
   for( let i=0; i < panelFaqContainer.length; i++ ) {
     panelFaqContainer[i].addEventListener('click', function() { // 클릭시 처리할 일
