@@ -3,60 +3,18 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OMO-mini</title>
-
-    <!-- Favicons -->
-    <link href="{% static 'webapp/assets/img/apple-touch-icon.png' %}" rel="icon">
-    <link href="{% static 'webapp/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-          rel="stylesheet">
-
-
-    <!-- Vendor CSS Files -->
-
-    <link href="{% static 'webapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'webapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'webapp/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-    <link href="{% static 'webapp/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-    <link href="{% static 'webapp/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-    <link href="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'webapp/bootstrap/bootstrap.min.css' %}" media="screen">
-
-    <!-- Template Main CSS File -->
-    <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
-
-    <!-- =======================================================
-    * Template Name: Tempo - v4.10.0
-    * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
-
+{% include 'webapp/html/head.html' %}
 </head>
 
 <body>
 {% include 'webapp/html/header.html' %}
 {% include 'webapp/html/hero.html' %}
 <main id="main">
-
-
     {% include 'webapp/html/about.html' %}
     {% include 'webapp/html/accordion.html' %}
     {% include 'webapp/html/cta.html' %}
     {% include 'webapp/html/team.html' %}
     {% include 'webapp/html/contact.html' %}
-
 </main><!-- End #main -->
 
 <!-- Footer + Modal -->
@@ -66,32 +24,7 @@
 {% include 'webapp/html/logout_temp.html' %}
 
 <!--js -->
-<div id="js">
-    <!-- Vendor JS Files -->
-    <script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'webapp/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-    <script src="{% static 'webapp/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-    <script src="{% static 'webapp/assets/vendor/php-email-form/validate.js' %}"></script>
-
-
-    <!-- Template Main JS File -->
-    <script src="{% static 'webapp/assets/js/main.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/49d0ed2e0e.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-    <!-- 배터리 색상 -->
-    <script src="{% static 'webapp/assets/js/battery_color.js' %}">    </script>
-    <script src="{% static 'webapp/assets/js/pagination.js' %}">    </script>
-    <script src="{% static 'webapp/assets/js/kr_runtime.js' %}">    </script>
-    <script src="{% static 'webapp/assets/js/padding_date.js' %}">    </script>
-</div>
-
+{% include 'webapp/html/js.html' %}
 </body>
 
 </html>
