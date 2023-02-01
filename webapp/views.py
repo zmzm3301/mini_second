@@ -20,14 +20,14 @@ def createform(request):
     std.runtime = request.GET['runtime']
     std.firmV = request.GET['firmV']
     std.save()
-    return redirect('/')
+    return redirect('/#about')
 
 
 def data_delete(request, pk):
     del_data = get_object_or_404(Info, pk=pk)
     del_data.delete()
     std = Info.objects.all().order_by('-pk')
-    return redirect('/', {
+    return redirect('/#about', {
         'std': std
     })
 
