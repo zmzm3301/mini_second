@@ -1397,6 +1397,11 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+.team_center{
+    display : flex;
+    justify-content : center;
+}
+
 .team {
   background: #fff;
   padding: 60px 0;
@@ -1405,6 +1410,9 @@ section {
 }
 
 .team .member {
+  display : flex;
+  flex-direction : column;
+  justify-content : center;
   margin-bottom: 20px;
   overflow: hidden;
   text-align: center;
