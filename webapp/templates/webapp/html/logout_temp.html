@@ -1,4 +1,5 @@
 <!-- Logout modal -->
+{% load static %}
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -8,12 +9,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="logoutmodalbody">
-                <div class="logout_temp"></div>
+                <div class="logout_temp">
+                    <img class="signin_img" src="{% static 'webapp/assets/img/logout.jpg' %}">
+                </div>
                 <div id="logout_tdiv"><h3 id="logout_text">로그아웃 하시겠습니까?</h3></div>
                 <form action="{% url 'webapp:logout' %}" method="post" class="col-md-4 logout_button">
                     {% csrf_token %}
-                    <input type="button" data-bs-dismiss="modal" value="취소">
                     <input type="submit" value="확인">
+                    <input type="button" data-bs-dismiss="modal" value="취소"> 
                 </form>
             </div>
         </div>

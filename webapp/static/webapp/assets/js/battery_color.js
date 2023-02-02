@@ -7,13 +7,13 @@ const bat_fig = document.querySelector('.bat-fig').innerText
 
     const color_box = document.querySelector('.color_box_input')
         if(bat_fig <= 20){
-            bat_prog.style.backgroundColor = "#ff0000";
+            bat_prog.style.backgroundColor = "#DF0101";
         }else if(bat_fig <= 40){
-            bat_prog.style.backgroundColor = "#ff8000";
+            bat_prog.style.backgroundColor = "#FF4000";
         }else if(bat_fig <= 60){
-            bat_prog.style.backgroundColor = "#ffff00";
+            bat_prog.style.backgroundColor = "#DF7401";
         }else if(bat_fig <= 80){
-            bat_prog.style.backgroundColor = "#80ff00";
+            bat_prog.style.backgroundColor = "#D7DF01";
         }else if(bat_fig <= 100){
-            bat_prog.style.backgroundColor = "#00ff00";
+            bat_prog.style.backgroundColor = "#04B404";
         }

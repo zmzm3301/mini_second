@@ -9,6 +9,28 @@
 /*--------------------------------------------------------------
 # progress
 --------------------------------------------------------------*/
+
+
+
+
+.align-items-stretch{
+  display: flex;
+  justify-content: center;
+}
+
+.batText{
+
+  margin-left:85%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.signin_temp {
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .progress {
   --bs-progress-height: 1rem;
   --bs-progress-font-size: 0.75rem;
@@ -36,13 +58,19 @@
   white-space: nowrap;
   background-color: var(--bs-progress-bar-bg);
   transition: var(--bs-progress-bar-transition);
-  transition: 0.4s linear;  
+  transition: 0.4s linear;
   transition-property: width, background-color;
   animation: progressAnimationStrike 2s, 1s linear infinite progress-bar-stripes;
 }
+
 @keyframes progressAnimationStrike {
-  from { width: 0 }
-  to   { width: 'bat_fig' }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 'bat_fig'
+  }
 }
 
 .progress-bar-striped {
@@ -59,66 +87,72 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-#teamOne{
+#teamOne {
   display: flex;
   justify-content: center;
 }
 
-#teamTwo{
+#teamTwo {
   justify-content: center;
 }
 
-.text_center{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-evenly;
+.text_center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 
 }
 
 
 #products {
-  border-collapse:collapse;
+  border-collapse: collapse;
   margin-bottom: 10px;
 }
 
 .off-screen {
   display: none;
 }
+
 #review_nav {
   text-align: center;
-  display:flex;
-  justify-content : center;
-  margin-top : 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
+
 #review_nav a {
   display: inline-block;
-  padding: 3px 5px;
+  padding: 3px 10px;
   margin-right: 10px;
-  font-family:Tahoma;
-  background: #ccc;
+  background: rgb(255, 255, 255);
   color: #000;
   text-decoration: none;
+  font-weight: 600;
 }
+
 #review_nav a.active {
-  background: #333;
-  color: #fff;
+  background: rgb(89, 89, 253);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  
+ 
 }
 
-.info_review{
-    display : flex;
-    justify-content : flex-start;
+.info_review {
+  display: flex;
+  justify-content: flex-start;
 }
 
-#thText{
-  font-weight:normal;
+#thText {
+  font-weight: normal;
 }
 
-.title_p{
-    font-size : 1.2em;
+.title_p {
+  font-size: 1.2em;
 }
 
 
-.click{
+.click {
   border-bottom: 1px solid rgb(228, 91, 91);
   color: rgb(228, 91, 91);
 }
@@ -129,42 +163,34 @@
 }
 
 .panel-faq-title {
-
   cursor: pointer;
   text-align: left;
   font-weight: 600;
   font-size: 17px;
-
-
 }
 
 
-.panel-faq-title:hover{
+.panel-faq-title:hover {
   color: rgb(228, 91, 91);
 }
 
 
 .panel-faq-answer {
-  margin-left: 30px;
+  margin-left: 50px;
   height: 0;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  /* 변화가 시작되는 쪽에다가 transition 적용해준다 0 -> 300px
+  /* 변화가 시작되는 쪽에다가 transition 적용해준다 0 -> 300px 
   왜? 닫기 버튼을 누를 때 변화가 티남 */
   transition: all 0.3s;
 }
-#accordion_title{
-    padding : 0px;
-    text-size : 1.2em;
-    margin : 10px;
-}
 
 
-.review_info{
-    display : flex;
-    flex-direction : column;
-    align-items : end;
+.review_info {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 #btn-all-close {
@@ -174,7 +200,7 @@
   cursor: pointer;
   float: right;
   border-radius: 7px;
-  position : relative;
+  position: relative;
 }
 
 #btn-all-close:hover {
@@ -189,177 +215,211 @@
   height: 60px;
 }
 
-.logmodalbody{
-    display : flex;
-    justify-content: center;
-    width : 100%;
-    align-items : center;
-    flex-direction: columns;
+.logmodalbody {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  flex-direction: columns;
 }
 
-.logmodala{
-    display : flex;
-    justify-content: center;
-    width : 400px;
-    align-items : center;
+.logmodala {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  align-items: center;
 }
 
-.logmodalb{
-    display : flex;
-    justify-content: center;
-    width : 400px;
-    align-items : center;
+.logmodalb {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  align-items: center;
 }
 
-.logbtn{
-    justify-content:center;
-}
-.logout_temp{
-    display:flex;
-    flex-direction:row;
-    background: url("../img/blog/logout.jpg");
-    width : 500px;
-    height : 430px;
-    background-size : cover;
-}
-.login_temp{
-    background-color : skyblue;
-    width : 400px;
-    height : 400px;
+.logbtn {
+  justify-content: center;
 }
 
-
-.login_form{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
-
-.signin_h4{
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
-.signin_username{
-    border: black 1px solid;
-    border-radius: 6px 6px 0px 0px;
-    width: 400px;
-    height: 50px;
-}
-
-.signin_username_con{
-    display: flex;
-    margin-left: 50px;
-    align-items: center;
-    width: 400px;
-    height: 50px;
-}
-
-.username_input{
-    border: none;
+.logout_temp {
+  display: flex;
+  width: 200px;
+  margin-left: 20px;
 
 }
 
-.signin_passward{
-    border: black 1px solid;
-    border-top: 0px;
-    border-radius: 0px 0px 6px 6px;
-    width: 400px;
-    height: 50px;
-}
-
-.signin_passward_con{
-    display: flex;
-    margin-left: 50px;
-    align-items: center;
-    width: 400px;
-    height: 50px;
-}
-
-.passward_input{
-    border: none;
-}
-
-.signin_icon{
-    margin: 8px;
-}
-
-.signin_btn{
-    width: 400px;
-    height: 120px;
-    margin: 0px 30px 0px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.signin_img_box{
-    display : flex;
-    justify-content : center;
-}
-.signin_img{
-    display : flex;
-    width : 200px;
-    height : 200px;
-    background-size : cover;
-    justify-content : center;
-}
-
-.signin_btn1{
-    width: 400px;
-    height: 55px;
-    margin: 10px;
-    font-size: 1.3em;
-    background-color: beige;
-    border: gray 3px solid;
-    border-radius: 6px;
-    display : flex;
-    justify-content : center;
-}
-.signin_input{
-    margin : 30px;
+.login_temp {
+  background-color: skyblue;
+  width: 400px;
+  height: 400px;
 }
 
 
-#logoutmodalbody{
-    display:flex;
-    flex-direction:column;
-    align-self : center;
-    justify-content:center;
-    padding : 0px;
-}
-#logout_text{
-    margin : 8px;
-    display : flex;
-    justify-content : center;
-    font-weight : bold;
+.login_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.logout_button{
-    display : flex;
-    justify-content : center;
-    width : 100%;
-    padding : 15px;
-}
-.logout_button input{
-    margin : 10px;
-    width : 75px;
-    height : 45px;
-    padding : 0px;
-    font-size: 1.2em;
-    background-color: beige;
-    border: gray 2px solid;
-    border-radius: 6px;
-    display : flex;
-    justify-content : center;
+.signin_h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
+.signin_username {
+  border: black 1px solid;
+  border-radius: 6px 6px 0px 0px;
+  width: 400px;
+  height: 50px;
+}
+
+.signin_username_con {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+}
+
+.username_input {
+  border: none;
+
+}
+
+.signin_passward {
+  border: black 1px solid;
+  border-top: 0px;
+  border-radius: 0px 0px 6px 6px;
+  width: 400px;
+  height: 50px;
+}
+
+.signin_passward_con {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+}
+
+.passward_input {
+  border: none;
+}
+
+.signin_icon {
+  margin: 8px;
+}
+
+.signin_btn {
+  width: 400px;
+  height: 120px;
+  margin: 0px 30px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin_img_box {
+  display: flex;
+  justify-content: center;
+}
+
+.signin_img {
+  display: flex;
+  width: 350px;
+  height: 200px;
+  background-size: cover;
+  justify-content: center;
+}
+
+.signin_btn1 {
+  width: 400px;
+  height: 55px;
+  margin-top: -40px;
+  background-color: rgb(97, 97, 241);
+  display: flex;
+  justify-content: center;
+  border: #000;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.signin_btn1:hover {
+  background-color: #48bc13;
+  color: black;
+  transition: 0.3s;
+}
+
+#loginModalLabel {
+  font-weight: 600;
+  margin-left: 35px;
+}
+
+#closeButton {
+  margin-right: 40px;
+}
+
+.signin_input {
+  margin: 30px;
+}
 
 
-.signin_form{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+#logoutmodalbody {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+#logout_text {
+  font-size: 15px;
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.logout_button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+}
+
+.logout_button input {
+  margin: 10px;
+  width: 75px;
+  height: 45px;
+  padding: 0px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #474747;
+  color: white;
+  border: #000;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.logout_button input:hover{
+  background-color: rgb(153, 153, 153);
+  color: black;
+  transition: 0.3s;
+}
+
+#logoutModalLabel{
+  font-weight: 600;
+  margin-left: 35px;
+}
+
+.signin_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
@@ -368,7 +428,11 @@ body {
   color: #444444;
 }
 
-.loginButton{
+.dataReviewText{
+  font-weight: 600;
+}
+
+.loginButton {
   background-color: #5858FA;
   width: 70px;
   height: 30px;
@@ -379,40 +443,38 @@ body {
   box-shadow: 4px 4px 10px 1px black;
 }
 
-.loginButton:hover{
+.loginButton:hover {
   background-color: #20c46c;
   transition: 0.3s;
 }
 
-.btn-primary{
-  width: 70px;
-  height: 30px;
- 
-}
-
 .inputButton{
   margin-top: 12px;
+  color: black;
 }
 
-.buttonArea{
+.buttonArea {
   margin-left: 10%;
-  
 }
 
-.modalForm{
+.modalForm {
   display: flex;
 }
 
-#batteryInput{
-  margin-left: 40px;
+#batteryInput {
+  margin-left: 50px;
 }
 
-#runtimeInput{
+#runtimeInput {
   margin-left: 22px;
 }
 
-#colorInput{
+#colorInput {
   margin-left: 53px;
+}
+
+#firmVer{
+  margin-left: 68px;
 }
 
 .py-3 {
@@ -433,7 +495,6 @@ p {
 a,
 a:visited {
   text-decoration: none;
-  color: #00AE68;
 }
 
 .clear {
@@ -741,61 +802,61 @@ a.button {
   border: none;
 }
 
-.firmV_fig{
-    display:flex;
-    flex-direction:column;
+.firmV_fig {
+  display: flex;
+  flex-direction: column;
 }
 
-.firmV_info{
-    margin : 5px;
-    margin-top:5px;
+.firmV_info {
+  margin: 5px;
+  margin-top: 5px;
 }
 
-.color_box_fig{
-    display:flex;
-    flex-direction:column;
+.color_box_fig {
+  display: flex;
+  flex-direction: column;
 }
 
 .color_box_input::-webkit-color-swatch {
   border: none;
 }
 
-.runtime_fig{
-    display:flex;
-    flex-direction : column;
+.runtime_fig {
+  display: flex;
+  flex-direction: column;
 }
 
 
 
-.runtime_info{
-    margin : 5px;
-    margin-top : 5px;
+.runtime_info {
+  margin: 5px;
+  margin-top: 5px;
 }
 
 .runInfo {
 
-  margin: auto 10%;
 }
 
 
 .colInfo {
-
-  margin: auto 10%;
+    width : 150px;
 }
 
 .firmV {
-  margin: auto 10%;
+    width : 150px;
 }
 
 .infoBottom {
   display: flex;
-  justify-content: center;
+  justify-content:center;
+
 }
 
 .infoarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 30px;
 }
 
 
@@ -1146,7 +1207,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  padding : 0px; 0px;
+  padding: 0px;
   position: relative;
 }
 
@@ -1243,7 +1304,7 @@ h6 {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  padding : 60px 0px;
+  padding: 60px 0px;
 }
 
 .section-bg {
@@ -1293,6 +1354,10 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about{
+  margin-bottom: -70px;
+}
+
 .about .content h3 {
   font-weight: 600;
   font-size: 26px;
@@ -1394,12 +1459,59 @@ section {
   }
 }
 
+
+
+/*--------------------------------------------------------------
+# Cta2
+--------------------------------------------------------------*/
+.cta2 {
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.8)), url("../img/cta-bg2.png") center center;
+  background-size: cover;
+  padding: 60px 0;
+}
+
+.cta2 h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cta2 p {
+  color: #fff;
+}
+
+.cta2 .cta-btn {
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta2 .cta-btn:hover {
+  background: #e43c5c;
+  border: 2px solid #e43c5c;
+}
+
+@media (min-width: 1024px) {
+  .cta2 {
+    background-attachment: fixed;
+  }
+}
+
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
-.team_center{
-    display : flex;
-    justify-content : center;
+.team_center {
+  display: flex;
+  justify-content: center;
 }
 
 .team {
@@ -1410,9 +1522,9 @@ section {
 }
 
 .team .member {
-  display : flex;
-  flex-direction : column;
-  justify-content : center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 20px;
   overflow: hidden;
   text-align: center;
