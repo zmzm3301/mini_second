@@ -18,6 +18,9 @@ for (let i = 0 ; i < title.length ; i++){
     let ap = arr[4][0] == 'a' ? "오전" : "오후";
     let hour = pad(parseInt(tt[0]));
     let minute = pad(parseInt(tt[1]));
-    let result = year + "년 " + month + "월 " + day + "일 " + ap + " "+ hour + "시 " + minute + "분";
+    if(tt[1] == null){
+    minute = "00";
+    }
+    let result = "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0" + year + "년 " + month + "월 " + day + "일 " + ap + " "+ hour + "시 " + minute + "분";
     title[i].innerText = result;
 }
